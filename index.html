@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportify - Dashboard Olahraga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sportify 🏃</h1>
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#riwayat">Riwayat</a>
+            <a href="#statistik">Statistik</a>
+            <a href="#profil">Profil</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="notification-area"></div>
+
+        <section id="dashboard" class="card hero-section">
+            <h2>Ringkasan Hari Ini</h2>
+            <div class="summary-grid">
+                <div>Total Durasi: <span id="durasi-hari-ini">0</span> Menit</div>
+                <div>Kalori Terbakar: <span id="kalori-hari-ini">0</span> Kkal</div>
+            </div>
+        </section>
+
+        <section id="target-progress" class="card">
+            <h2>Target Olahraga Mingguan</h2>
+            <p>Target: 150 Menit</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="weekly-progress" style="width: 0%;">0%</div>
+            </div>
+        </section>
+
+        <section id="add-activity" class="card">
+            <h2>➕ Catat Aktivitas Baru</h2>
+            <form id="activity-form">
+                <label for="jenis-olahraga">Jenis Olahraga:</label>
+                <select id="jenis-olahraga" required>
+                    <option value="lari">Lari</option>
+                    <option value="bersepeda">Bersepeda</option>
+                    <option value="pushup">Push Up</option>
+                    <option value="yoga">Yoga</option>
+                </select>
+
+                <label for="durasi">Durasi (menit):</label>
+                <input type="number" id="durasi" min="1" required>
+
+                <label for="berat-badan">Berat Badan (kg - untuk kalkulasi):</label>
+                <input type="number" id="berat-badan" value="70" min="30" required>
+                
+                <p class="estimated-calories">Estimasi Kalori: <span id="kalori-estimasi">0</span> Kkal</p>
+
+                <button type="submit">Simpan Aktivitas</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
